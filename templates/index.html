@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data th, .data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .data th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Predicción de variables en el cuarto de congelación de McDonald's </h1>
+        <form method="POST" class="mb-5">
+            <div class="form-group">
+                <label for="target_date">Fecha Objetivo:</label>
+                <input type="date" id="target_date" name="target_date" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predecir</button>
+        </form>
+        {% if plot_html1 and plot_html2 and plot_html3 %}
+        <h2>Predicciones para Corrientes de las Tres Fases del compresor</h2>
+        <div>{{ plot_html1|safe }}</div>
+        <h2>Predicciones para Corriente Resistencia Deshielo</h2>
+        <div>{{ plot_html2|safe }}</div>
+        <h2>Predicciones para Desbalance de Corriente</h2>
+        <div>{{ plot_html3|safe }}</div>
+        <h3>Datos de Predicción</h3>
+        <div>{{ table_html|safe }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

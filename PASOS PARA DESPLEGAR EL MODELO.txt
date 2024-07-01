@@ -1,0 +1,4 @@
+set PATH=%PATH%;C:\Users\Jose Luis Dominguez\miniconda3;C:\Users\Jose Luis Dominguez\miniconda3\Scripts
+conda activate rf_model_env
+python app.py
+cd "C:\Users\Jose Luis Dominguez\Desktop\ALGORITMOS\Random Forest CONGELACION"
